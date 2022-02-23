@@ -1,6 +1,6 @@
 # UID Directive
 
-An SSR-friendly Vue 3 directive that generates a unique ID for elements.
+An SSR-friendly Vue directive that generates a unique ID for elements.
 
 ## Quick Start
 
