@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-const input = ref<null | HTMLElement>(null)
+import TestInput from './components/TestInput.vue'
 </script>
 
 <template>
   <div>
-    <label :for="input?.id">Input label</label>
-    <input v-uid ref="input" type="text">
+    <TestInput />
+    <TestInput />
+    <TestInput />
+    <TestInput />
+    <TestInput />
+    <TestInput />
+    <TestInput />
   </div>
 </template>

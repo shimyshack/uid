@@ -1,6 +1,6 @@
 import type { Directive, Plugin } from 'vue'
 
-const uid = () => Math.floor(Date.now() + Math.random()).toString(36)
+const uid = () => Date.now().toString(36) + Math.random().toString(36).substring(2)
 
 export const Uid: Directive = {
   created(el) {
