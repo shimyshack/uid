@@ -31,7 +31,7 @@ In Nuxt, create a plugin to take advantage of SSR-support:
 import { UidDirectivePlugin } from '@shimyshack/uid'
 
 export default defineNuxtPlugin(({ vueApp }) => {
-  vueApp.install(UidDirectivePlugin)
+  vueApp.use(UidDirectivePlugin)
 })
 ```
 
