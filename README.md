@@ -1,4 +1,4 @@
-# Vue UID Directive
+# vue-uid
 
 An SSR-friendly Vue directive that generates a unique ID for elements.
 
