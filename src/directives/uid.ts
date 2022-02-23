@@ -13,7 +13,7 @@ export const UidDirective: Directive = {
   },
 }
 
-export const UidPlugin: Plugin = {
+export const UidDirectivePlugin: Plugin = {
   install(app) {
     app.directive('uid', UidDirective)
   },

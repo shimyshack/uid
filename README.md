@@ -31,7 +31,7 @@ In Nuxt, create a plugin to take advantage of SSR-support:
 import { UidDirectivePlugin } from '@shimyshack/uid'
 
 export default defineNuxtPlugin(({ vueApp }) => {
-  vueApp.install(BindOncePlugin)
+  vueApp.install(UidDirectivePlugin)
 })
 ```
 
@@ -43,13 +43,13 @@ You can now use the directive on any element in which you need to register a uni
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const input = ref(null)
+const input = ref<null | HTMLElement>(null)
 </script>
 
 <template>
   <div>
-    <label :for="input && input.id">Input label</label>
-    <input v-uid ref="input" type="text">
+    <label :for="input && input.id || undefined">Input label</label>
+    <input ref="input" v-uid type="text">
   </div>
 </template>
 ```
