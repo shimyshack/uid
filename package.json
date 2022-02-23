@@ -28,7 +28,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --outDir dist/types",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "release": "./scripts/release.sh"
   },
   "dependencies": {
     "vue": "^3.2.25"
