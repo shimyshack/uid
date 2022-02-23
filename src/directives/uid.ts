@@ -4,11 +4,11 @@ const uid = () => Math.floor(Date.now() + Math.random()).toString(36)
 
 export const Uid: Directive = {
   created(el) {
-    el.setAttribute('data-uid', el.dataset['uid'] || uid())
+    el.setAttribute('id', el.id || uid())
   },
   getSSRProps() {
     return {
-      'data-uid': uid()
+      id: uid()
     }
   },
 }

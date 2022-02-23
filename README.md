@@ -48,8 +48,8 @@ const input = ref<null | HTMLElement>(null)
 
 <template>
   <div>
-    <label :for="input?.dataset.uid">Input label</label>
-    <input v-uid ref="input" :id="input?.dataset.uid" type="text">
+    <label :for="input?.id">Input label</label>
+    <input v-uid ref="input" type="text">
   </div>
 </template>
 ```
