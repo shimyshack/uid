@@ -49,7 +49,7 @@ const input = ref<null | HTMLElement>(null)
 <template>
   <div>
     <label :for="input && input.id || undefined">Input label</label>
-    <input ref="input" v-uid type="text">
+    <input v-uid ref="input" type="text">
   </div>
 </template>
 ```
@@ -58,7 +58,7 @@ This will work on both server and client re-hydration.
 
 ## Contributors
 
-This was based on [`vue-bind-once`](https://github.com/danielroe/vue-bind-once) by Daniel Roe, but simplified to fit my needs.
+This was inspired by the work of Daniel Roe on [`vue-bind-once`](https://github.com/danielroe/vue-bind-once), but simplified to fit my needs.
 
 For more advanced use cases, I suggest you check out his work.
 

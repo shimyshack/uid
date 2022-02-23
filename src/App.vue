@@ -7,6 +7,6 @@ const input = ref<null | HTMLElement>(null)
 <template>
   <div>
     <label :for="input && input.id || undefined">Input label</label>
-    <input ref="input" v-uid type="text">
+    <input v-uid ref="input" type="text">
   </div>
 </template>
