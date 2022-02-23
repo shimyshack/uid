@@ -20,9 +20,10 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { Uid, UidPlugin } from '@shimyshack/uid'
 
-const app = createApp(App)
-app.use(UidPlugin)
-// or app.directive('uid', Uid)
+createApp(App)
+  .use(UidPlugin)
+  // or .directive('uid', Uid)
+  .mount('#app')
 ```
 
 In Nuxt, create a plugin to take advantage of SSR-support:
