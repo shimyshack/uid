@@ -1,4 +1,4 @@
-# UID Directive
+# Vue UID Directive
 
 An SSR-friendly Vue directive that generates a unique ID for elements.
 
@@ -18,20 +18,20 @@ npm install @shimyshack/uid --save
 ```javascript
 import { createApp } from 'vue'
 import App from './App.vue'
-import { UidDirective, UidDirectivePlugin } from '@shimyshack/uid'
+import { Uid, UidPlugin } from '@shimyshack/uid'
 
 const app = createApp(App)
-app.install(UidDirectivePlugin)
-// or app.directive('uid', UidDirective)
+app.use(UidPlugin)
+// or app.directive('uid', Uid)
 ```
 
 In Nuxt, create a plugin to take advantage of SSR-support:
 
 ```javascript
-import { UidDirectivePlugin } from '@shimyshack/uid'
+import { UidPlugin } from '@shimyshack/uid'
 
 export default defineNuxtPlugin(({ vueApp }) => {
-  vueApp.use(UidDirectivePlugin)
+  vueApp.use(UidPlugin)
 })
 ```
 

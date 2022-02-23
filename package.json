@@ -12,15 +12,15 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/uid-directive.umd.js",
-  "module": "./dist/uid-directive.mjs",
+  "main": "./dist/uid.umd.js",
+  "module": "./dist/uid.mjs",
   "types": "./dist/types/components/index.d.ts",
   "type": "module",
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": "./dist/uid-directive.mjs",
-      "require": "./dist/uid-directive.umd.js",
+      "import": "./dist/uid.mjs",
+      "require": "./dist/uid.umd.js",
       "types": "./dist/types/directives/uid.d.ts"
     },
     "./*": "./*"

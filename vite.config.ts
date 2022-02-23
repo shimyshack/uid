@@ -8,12 +8,12 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/directives/uid.ts'),
-      name: 'UidDirective',
+      name: 'Uid',
       fileName: (format) => {
         if (format === 'es') {
-          return `uid-directive.mjs`
+          return `uid.mjs`
         }
-        return `uid-directive.${format}.js`
+        return `uid.${format}.js`
       }
     },
     rollupOptions: {
