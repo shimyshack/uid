@@ -1,11 +1,67 @@
-# Vue 3 + Typescript + Vite
+# UID Directive
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+An SSR-friendly Vue 3 directive that generates a unique ID for elements.
 
-## Recommended IDE Setup
+## Quick Start
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+Install `@shimyshack/uid`:
 
-## Type Support For `.vue` Imports in TS
+```bash
+npm install @shimyshack/uid --save
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+# or yarn
+# yarn add @shimyshack/uid
+```
+
+## Register Directive
+
+```javascript
+import { createApp } from 'vue'
+import App from './App.vue'
+import { UidDirective, UidDirectivePlugin } from '@shimyshack/uid'
+
+const app = createApp(App)
+app.install(UidDirectivePlugin)
+// or app.directive('uid', UidDirective)
+```
+
+In Nuxt, create a plugin to take advantage of SSR-support:
+
+```javascript
+import { UidDirectivePlugin } from '@shimyshack/uid'
+
+export default defineNuxtPlugin(({ vueApp }) => {
+  vueApp.install(BindOncePlugin)
+})
+```
+
+## Usage
+
+You can now use the directive on any element in which you need to register a unique id.
+
+```vue
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const input = ref(null)
+</script>
+
+<template>
+  <div>
+    <label :for="input && input.id">Input label</label>
+    <input v-uid ref="input" type="text">
+  </div>
+</template>
+```
+
+This will work on both server and client re-hydration.
+
+## Contributors
+
+This was based on [`vue-bind-once`](https://github.com/danielroe/vue-bind-once) by Daniel Roe, but simplified to fit my needs.
+
+For more advanced use cases, I suggest you check out his work.
+
+## License
+
+MIT License - Copyright &copy; Jason Shimkoski

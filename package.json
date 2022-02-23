@@ -1,6 +1,14 @@
 {
   "name": "@shimyshack/uid",
   "version": "0.0.0",
+  "description": "An SSR-friendly Vue 3 directive that generates a unique ID for elements.",
+  "keywords": [
+    "vue",
+    "directive",
+    "ssr"
+  ],
+  "repository": "https://github.com/shimyshack/uid",
+  "license": "MIT",
   "files": [
     "dist"
   ],
