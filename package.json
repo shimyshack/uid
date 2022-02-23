@@ -1,6 +1,6 @@
 {
   "name": "@shimyshack/uid",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An SSR-friendly Vue directive that generates a unique ID for elements.",
   "keywords": [
     "vue",
