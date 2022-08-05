@@ -19,9 +19,9 @@
   "sideEffects": false,
   "exports": {
     ".": {
+      "types": "./dist/types/directives/uid.d.ts",
       "import": "./dist/uid.mjs",
-      "require": "./dist/uid.umd.js",
-      "types": "./dist/types/directives/uid.d.ts"
+      "require": "./dist/uid.umd.js"
     },
     "./*": "./*"
   },
