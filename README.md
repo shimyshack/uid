@@ -40,16 +40,40 @@ export default defineNuxtPlugin(({ vueApp }) => {
 
 You can now use the directive on any element in which you need to register a unique id.
 
+### Single Element
+
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-const input = ref<null | HTMLElement>(null)
+const input = ref<HTMLElement>()
 </script>
 
 <template>
   <div>
     <label :for="input?.id">Input label</label>
     <input v-uid ref="input" type="text">
+  </div>
+</template>
+```
+
+### Array of Elements
+
+```vue
+<script setup lang="ts">
+import { ref } from 'vue'
+const formInputRefs = ref<HTMLElement[]>([])
+const form_fields = [
+  { label: 'Field 1', name: 'field_1' },
+  { label: 'Field 2', name: 'field_2' },
+]
+</script>
+
+<template>
+  <div v-for="(field, index) in form_fields">
+    <label :for="formInputRefs[index]?.id">
+      {{ field.label }}
+    </label>
+    <input v-uid ref="formInputRefs" :name="field.name" />
   </div>
 </template>
 ```
