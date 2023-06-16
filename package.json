@@ -14,7 +14,7 @@
   ],
   "main": "./dist/uid.umd.js",
   "module": "./dist/uid.mjs",
-  "types": "./dist/types/components/index.d.ts",
+  "types": "./dist/types/directives/uid.d.ts",
   "type": "module",
   "sideEffects": false,
   "exports": {
